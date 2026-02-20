@@ -1,22 +1,13 @@
 import sys
-import logging
-from pathlib import Path
+from ui.app import SAM3DApp
 
-# Logging setup
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent))
-
-from ui.app import run_app
-
-
-if __name__ == "__main__":
+def main():
     try:
-        run_app()
+        app = SAM3DApp()  # Initialize the SAM3D application
+        app.run()  # Run the application
     except Exception as e:
-        logging.error(f"Fatal error: {e}")
+        print(f"An error occurred: {e}")
         sys.exit(1)
+
+if __name__ == '__main__':
+    main()
