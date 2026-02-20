@@ -1,0 +1,45 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Model Weights
+*.pt
+*.pth
+*.onnx
+*.pkl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Videos & Media (optional)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Temporary
+.tmp/
+temp/
