@@ -1,1 +1,44 @@
-import sys\nfrom PyQt6 import QtCore, QtWidgets, QtGui\n\nclass MainWindow(QtWidgets.QMainWindow):\n    def __init__(self):\n        super(MainWindow, self).__init__()\n        self.setWindowTitle('3D Body Application')\n        self.setGeometry(100, 100, 800, 600)\n\n        # Create central widget\n        central_widget = QtWidgets.QWidget()\n        self.setCentralWidget(central_widget)\n        layout = QtWidgets.QVBoxLayout(central_widget)\n\n        # Video Player Placeholder\n        self.video_player = QtWidgets.QLabel('Video Player Placeholder')\n        self.video_player.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)\n        layout.addWidget(self.video_player)\n\n        # Logs Display\n        self.logs_display = QtWidgets.QTextEdit()\n        self.logs_display.setPlaceholderText('Logs will be displayed here...')\n        layout.addWidget(self.logs_display)\n\n        # 3D Viewer Placeholder\n        self.threed_viewer = QtWidgets.QLabel('3D Viewer Placeholder')\n        self.threed_viewer.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)\n        layout.addWidget(self.threed_viewer)\n\n        # Status Bar\n        self.statusBar().showMessage('Ready')\n\nif __name__ == '__main__':\n    app = QtWidgets.QApplication(sys.argv)\n    window = MainWindow()\n    window.show()\n    sys.exit(app.exec())
+import sys
+from PyQt6 import QtCore, QtWidgets, QtGui
+
+
+class SAM3DApp(QtWidgets.QMainWindow):
+    """Main application window for SAM 3D Body."""
+
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("SAM 3D Body")
+        self.setGeometry(100, 100, 1200, 800)
+
+        central_widget = QtWidgets.QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QtWidgets.QVBoxLayout(central_widget)
+
+        # Image / Video input area
+        self.video_player = QtWidgets.QLabel("Image / Video Placeholder")
+        self.video_player.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.video_player)
+
+        # Log output
+        self.logs_display = QtWidgets.QTextEdit()
+        self.logs_display.setReadOnly(True)
+        self.logs_display.setPlaceholderText("Logs will be displayed here...")
+        layout.addWidget(self.logs_display)
+
+        # 3D viewer placeholder
+        self.threed_viewer = QtWidgets.QLabel("3D Viewer Placeholder")
+        self.threed_viewer.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(self.threed_viewer)
+
+        self.statusBar().showMessage("Ready")
+
+    def run(self):
+        """Show the window and start the Qt event loop."""
+        self.show()
+
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    window = SAM3DApp()
+    window.run()
+    sys.exit(app.exec())

@@ -4,8 +4,13 @@ torchvision>=0.15.0
 numpy>=1.24.0
 scipy>=1.10.0
 
-# SAM 3D Model
-segment-anything>=1.0
+# SAM 3D Body (Meta) – install the package from the upstream repo:
+#   git clone https://github.com/facebookresearch/sam-3d-body
+#   pip install -e .
+# segment-anything>=1.0 is pulled in as a transitive dependency.
+
+# Model hub / checkpoint download
+huggingface_hub>=0.20.0
 
 # 3D Processing & Visualization
 open3d>=0.17.0
@@ -13,9 +18,11 @@ trimesh>=3.20.0
 opencv-python>=4.8.0
 Pillow>=10.0.0
 
-# GUI & Visualization
+# Rerun SDK for live 3D inspection (optional)
+rerun-sdk>=0.15.0
+
+# GUI
 PyQt6>=6.5.0
-vispy>=0.14.0
 
 # Utilities
 tqdm>=4.65.0
