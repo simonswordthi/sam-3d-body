@@ -1,4 +1,28 @@
-numpy
-scipy
-PyQt6
-matplotlib
+# Core Dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# SAM 3D Model
+segment-anything>=1.0
+
+# 3D Processing & Visualization
+open3d>=0.17.0
+trimesh>=3.20.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# GUI & Visualization
+PyQt6>=6.5.0
+vispy>=0.14.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Development (optional)
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
